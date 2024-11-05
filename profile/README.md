@@ -18,21 +18,22 @@ It is not in STEMgraphs scope to teach the values and believes, but just the ski
 
 ## Process
 STEMgraph starts with a basic root node of skill: "The scholar can read the english language".
-From there, the completion of tasks takes the scholar to new nodes. 
-The tasks are also saved inside of the graph database.
-Every task in the database holds a reference to a git-repository with the description of the task to complete in order to learn the next skill. 
-Every task is also linked to preconfigured ChatGPT session via a sharing-link.
+From there, the completion of challenge takes the scholar to new nodes. 
+The challenges are also saved inside of the graph database.
+Every challenge in the database holds a reference to a git-repository with the description of the challenge to complete in order to learn the next skill. 
+Every challenge is also linked to preconfigured ChatGPT session via a sharing-link.
 The scholar can upload their solution to this session and let ChatGPT examine the solution. 
 
 ## Implementation
 The graph-database is implemented in neo4j, provided by AI-Gruppe.
-All tasks are stored in this github organization as individual repos and are meant to be as atomic as possible. 
-This means, each task should teach one skill at best, but never more than three. 
+All challenges are stored in this github organization as individual repos and are meant to be as atomic as possible. 
+This means, each challenge should teach one skill at best, but never more than three. 
+A challenge, that needs multiple steps to be completed is divided into `tasks`.
 Each of the repos shall contain:
-* a UUID as unique identifier of the task
-* a Licence, set by the original author of the task
+* a UUID as unique identifier of the challenge
+* a Licence, set by the original author of the challenge
 * a file called `learning-objective.md`
-* a file called `task.tex`
+* a file called `challenge.tex`
 * if necessary a directory called `assets/` for figures etc.
 
 ## Contributing
