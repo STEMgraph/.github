@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Visualization</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #graph-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>The STEMgraph</h1>
+    <div id="graph-container"></div>
+
+    <script>
+        fetch("http://stemgraph-online-api.boekelmann.net/graph")
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById("graph-container");
+            const nodes = new vis.DataSet(data.nodes);
+            const edges = new vis.DataSet(data.edges);
+            const network = new vis.Network(container, { nodes, edges }, {});
+        })
+        .catch(error => console.error("Fehler bei der Anfrage:", error));
+    </script>
+</body>
+</html>
+
