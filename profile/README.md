@@ -27,13 +27,12 @@ The scholar can upload their solution to this session and let ChatGPT examine th
 ## Implementation
 The graph-database is implemented in neo4j, provided by AI-Gruppe.
 All challenges are stored in this github organization as individual repos and are meant to be as atomic as possible. 
-This means, each challenge should teach one skill at best, but never more than three. 
-A challenge, that needs multiple steps to be completed is divided into `tasks`.
+This means, each exercise should teach one skill at best, but never more than three. 
+An exercise, that needs multiple steps to be completed is divided into `tasks`.
 Each of the repos shall contain:
 * a UUID as unique identifier of the challenge
 * a Licence, set by the original author of the challenge
-* a file called `learning-objective.md`
-* a file called `challenge.tex`
+* a file called `README.md`
 * if necessary a directory called `assets/` for figures etc.
 
 ## Contributing
